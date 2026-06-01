@@ -20,12 +20,7 @@
       gtag('config', 'G-456DDRCSRF');
     </script>
 
-   <script>
-    document.getElementById('download-cv').addEventListener('click', () => {
-      gtag('event', 'cv_download');
-      console.log('cv_download sent');
-    });
-    </script>
+  
 </head>
 
 <body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
@@ -59,6 +54,13 @@
 
     </div>
 
+
+     <script>
+    document.getElementById('download-cv').addEventListener('click', () => {
+      gtag('event', 'cv_download');
+      console.log('cv_download sent');
+    });
+    </script>
 </body>
 
 </html>
