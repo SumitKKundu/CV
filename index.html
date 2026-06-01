@@ -19,6 +19,14 @@
     
       gtag('config', 'G-456DDRCSRF');
     </script>
+
+    <script>
+document.getElementById('download-cv')?.addEventListener('click', () => {
+    gtag('event', 'cv_download', {
+        file_name: 'CV_SUMIT KUMAR KUNDU_2026.pdf'
+    });
+});
+</script>
 </head>
 
 <body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
@@ -44,7 +52,7 @@
 </p>
 
         <div>
-            <a href="./CV_SUMIT KUMAR KUNDU_2026.pdf" download
+            <a id="download-cv" href="./CV_SUMIT KUMAR KUNDU_2026.pdf" download
                 class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition">
                 Download CV (PDF)
             </a>
