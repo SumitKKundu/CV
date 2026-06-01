@@ -20,13 +20,12 @@
       gtag('config', 'G-456DDRCSRF');
     </script>
 
-    <script>
-document.getElementById('download-cv')?.addEventListener('click', () => {
-    gtag('event', 'cv_download', {
-        file_name: 'CV_SUMIT KUMAR KUNDU_2026.pdf'
+   <script>
+    document.getElementById('download-cv').addEventListener('click', () => {
+      gtag('event', 'cv_download');
+      console.log('cv_download sent');
     });
-});
-</script>
+    </script>
 </head>
 
 <body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
