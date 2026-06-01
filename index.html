@@ -55,12 +55,37 @@
     </div>
 
 
-   <script>
+   <!-- <script>
       document.getElementById("download-cv").addEventListener("click", () => {
         gtag("event", "cv_download", {
           transport: "beacon"
         });
         console.log("cv_download sent");
+      });
+    </script> -->
+
+    <script>
+      document.getElementById("download-cv").addEventListener("click", function(event) {
+        // 1. Stop the browser from downloading immediately
+        event.preventDefault(); 
+        
+        const downloadUrl = this.getAttribute("href");
+    
+        // 2. Fire the GA4 event with a callback
+        gtag("event", "cv_download", {
+          transport: "beacon",
+          event_callback: function() {
+            // 3. Once GA4 acknowledges, trigger the download
+            window.location.href = downloadUrl;
+          }
+        });
+    
+        // Fallback: If GA4 fails to respond within 1 second, download anyway
+        setTimeout(() => {
+          window.location.href = downloadUrl;
+        }, 1000);
+    
+        console.log("cv_download dispatch attempted");
       });
     </script>
 </body>
